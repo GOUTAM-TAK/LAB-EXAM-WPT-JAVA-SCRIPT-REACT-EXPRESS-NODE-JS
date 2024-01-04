@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <TITLE>CRUD EMPLOYEE APP</TITLE>
+        <script src="./EMPLOYEEAPP.JS">   
+    </script>
+    <script src="./jquery-3.3.1.js"></script>  
+    <!-- // $(document).ready(function(){
+    //     $("#btn").click(function(){ -->
+        <script>
+     const   validateForm=()=>{
+        let flag1= validateId();
+        let flag2=   validateName();
+        let flag3=   validateRadio();
+        let flag4=   validatePopUpBox();
+        let flag5=   validateCheckBox();
+        let flag6=   validateAge();
+        console.log(flag1); 
+        console.log(flag2); 
+        console.log(flag3); 
+        console.log(flag4); 
+        console.log(flag5);
+        console.log(flag6);    
+        if (flag1 && flag2 && flag3 && flag4 && flag5 && flag6) {  //if all flags are true then
+            console.log("successfully validate");
+            addEmployee(); 
+            displayList();
+            return;                               //add the employee to database
+        }
+        console.log("error occur");
+    } 
+    </script>
+    </head>
+    <body>
+        <H1>Employee Form:</H1><br/>
+        <form >
+        Id: <input type="number" id="id" required placeholder="enter id" autofocus /><br/>
+        <span id="idd"></span>
+        <h1></h1>
+        Name: <input type="text" id="name" required placeholder="enter name"  /><br/>
+        <span id="ne"></span>
+        <h1></h1>
+        DOB: <input type="date" id="dob" required ><br/>
+        <span id="db"></span>
+        <h1></h1>
+        Gender: <input type="radio" name="gender" id="male" value="male"/>Male
+                <input type="radio" name="gender" id="female" value="female" />Female
+                <input type="radio" name="gender" id="other" value="other" />Other<br/>
+                <span id="gr"></span>
+                <h1></h1>
+        City: <select id="city" name="city" size="1" >
+            <option name="city" value="select any one" >----select any one----</option>
+            <option name="city" value="pune" >pune</option>
+            <option name="city" value="mumbai" >mumbai</option>
+            <option name="city" value="delhi" >delhi</option>
+            <option name="city" value="chennai" >chennai</option>
+            </select>  
+            <br/>
+            <span id="cy"></span>
+            <h1></h1>
+            Language:<input type="checkbox" value="Hindi" name="skills" id="skill1" /><label for="skill1">Hindi</label>
+            <input type="checkbox" value="English" name="skills" id="skill2" /><label for="English">English</label>
+            <input type="checkbox" value="Marathi" name="skills" id="skill3" /><label for="Marathi">Marathi</label>
+            <br/>
+            <span id="ss"></span>
+            <h1></h1>
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+        <div >
+            <span id="list"></span>
+            </div>
+    </body>
+</html>
